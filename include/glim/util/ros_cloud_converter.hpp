@@ -10,7 +10,6 @@
 #include <gtsam_points/types/point_cloud.hpp>
 #include <glim/util/raw_points.hpp>
 
-#ifdef GLIM_ROS2
 #include <sensor_msgs/msg/point_cloud2.hpp>
 namespace glim {
 using PointCloud2 = sensor_msgs::msg::PointCloud2;
@@ -31,28 +30,6 @@ inline builtin_interfaces::msg::Time from_sec(const double time) {
 }
 
 }  // namespace glim
-#else
-#include <sensor_msgs/PointCloud2.h>
-namespace glim {
-using PointCloud2 = sensor_msgs::PointCloud2;
-using PointCloud2Ptr = sensor_msgs::PointCloud2::Ptr;
-using PointCloud2ConstPtr = sensor_msgs::PointCloud2::ConstPtr;
-using PointField = sensor_msgs::PointField;
-
-template <typename Stamp>
-double to_sec(const Stamp& stamp) {
-  return stamp.toSec();
-}
-
-inline ros::Time from_sec(const double time) {
-  ros::Time stamp;
-  stamp.sec = std::floor(time);
-  stamp.nsec = (time - stamp.sec) * 1e9;
-  return stamp;
-}
-
-}  // namespace glim
-#endif
 
 namespace glim {
 
