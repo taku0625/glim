@@ -1,0 +1,31 @@
+{
+  /*** CT-VGICP-based odometry estimation ***
+  // num_threads                    : Number of threads used for CT-VGICP
+  // voxel_resolution              : Target Gaussian voxel map resolution
+  // voxel_lru_thresh              : LRU cache threshold (frames)
+  // location_consistency_inf_scale : Weight for location consistency constraints
+  // constant_velocity_inf_scale    : Weight for constant velocity constraints
+  // lm_max_iterations              : Maximum number of iterations for CT-VGICP optimization
+  // smoother_lag                   : Fixed-lag smoothing window [sec]
+  // use_isam2_dogleg               :
+  // isam2_relinearize_skip         :
+  // isam2_relinearize_thresh       :
+  */
+  "odometry_estimation": {
+    "so_name": "libodometry_estimation_ct_vgicp.so",
+    // Gaussian voxel map params
+    "voxel_resolution": 1.0,
+    "voxel_lru_thresh": 200,
+    // CT-VGICP params
+    "location_consistency_inf_scale": 1e-3,
+    "constant_velocity_inf_scale": 1e3,
+    "lm_max_iterations": 8,
+    // smoother params
+    "smoother_lag": 1.0,
+    "use_isam2_dogleg": false,
+    "isam2_relinearize_skip": 1,
+    "isam2_relinearize_thresh": 0.1,
+    // Misc
+    "num_threads": 4
+  }
+}

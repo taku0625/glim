@@ -83,6 +83,7 @@ add_library(glim SHARED
   src/glim/odometry/async_odometry_estimation.cpp
   src/glim/odometry/odometry_estimation_imu.cpp
   src/glim/odometry/odometry_estimation_ct.cpp
+  src/glim/odometry/odometry_estimation_ct_vgicp.cpp
   src/glim/odometry/odometry_estimation_cpu.cpp
   # mapping
   src/glim/mapping/callbacks.cpp
@@ -123,6 +124,7 @@ list(APPEND glim_LIBRARIES glim)
 # Create shared libraries for estimation modules
 list(APPEND module_srcs
   src/glim/odometry/odometry_estimation_ct_create.cpp
+  src/glim/odometry/odometry_estimation_ct_vgicp_create.cpp
   src/glim/odometry/odometry_estimation_cpu_create.cpp
   src/glim/mapping/sub_mapping_create.cpp
   src/glim/mapping/sub_mapping_passthrough_create.cpp
