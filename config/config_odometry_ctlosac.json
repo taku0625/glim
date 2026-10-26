@@ -1,0 +1,28 @@
+{
+  "odometry_estimation": {
+    "so_name": "libodometry_estimation_ctlosac.so",
+    "ivox_resolution": 1.0,
+    "ivox_min_points_dist": 0.1,
+    "ivox_lru_thresh": 200,
+    "num_samples": 1,
+    "profiler_output_path": "/tmp/odometry_estimation_ctlosac_profiler.log",
+    "source_cloud_sampling_rt": 0.1,
+    "gaussian_voxelmap_resolution": 0.5,
+    "max_sample_iterations": 8,
+    "prediction_noise_scale": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "max_correspondence_distance": 2.0,
+    "lm_max_iterations": 8,
+    "smoother_lag": 0.1,
+    "use_isam2_dogleg": true,
+    "isam2_relinearize_skip": 1,
+    "isam2_relinearize_thresh": 0.1,
+    "num_threads": 24
+  }
+}

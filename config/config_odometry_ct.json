@@ -18,7 +18,7 @@
     // ivox params
     "ivox_resolution": 1.0,
     "ivox_min_points_dist": 0.1,
-    "ivox_lru_thresh": 200,
+    "ivox_lru_thresh": 100,
     // CT-GICP params
     "max_correspondence_distance": 2.0,
     "location_consistency_inf_scale": 1e-3,
@@ -26,10 +26,10 @@
     "lm_max_iterations": 8,
     // smoother params
     "smoother_lag": 1.0,
-    "use_isam2_dogleg": false,
+    "use_isam2_dogleg": true,
     "isam2_relinearize_skip": 1,
     "isam2_relinearize_thresh": 0.1,
     // Misc
-    "num_threads": 4
+    "num_threads": 24
   }
 }
