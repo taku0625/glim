@@ -5,9 +5,8 @@ It keeps the two scan endpoint poses, continuous-time interpolation, deskewing,
 velocity prediction and fixed-lag smoothing of CT-GICP.
 
 Build and install `gtsam_points` with `IntegratedCT_VGICPFactor` before building
-GLIM. The supplied GLIM revision requires gtsam_points 1.2.0 or later; the supplied
-older gtsam_points fork must be updated to a compatible base for a normal joint
-build. The new factor itself also supports that older fork.
+GLIM. Both development branches are based on their respective `v1.2.1` tags;
+use the modified gtsam_points branch, which provides the new factor.
 
 Select it by setting `global.config_odometry` in your local `config.json` to
 `config_odometry_ct_vgicp.json`. This loads `libodometry_estimation_ct_vgicp.so`.
@@ -41,5 +40,5 @@ checks DIRECT1 association, rigid VGICP normal equations, endpoint derivatives a
 continuous-motion recovery with deskewing.
 
 The new factor consistently uses GTSAM's `1/2 rᵀWr` nonlinear error and a
-`rᵀWr` Hessian constant term. This avoids error-scaling differences between
-the older fork and upstream v1.2.0 while reusing their CT pose Jacobians.
+`rᵀWr` Hessian constant term. This keeps the nonlinear error and Gaussian
+factor model consistent while reusing CT-GICP's pose Jacobians.
